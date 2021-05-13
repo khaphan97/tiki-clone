@@ -1,0 +1,21 @@
+/* Banner Home */
+
+.home_banner__left .slick-slide img {
+   display: block;
+   width: 100%;
+}
+
+.home_banner__left .slick-dots {
+   bottom: 2% !important;
+}
+
+
+.home_banner__left .slick-dotted.slick-slider {
+   margin-bottom: 0px !important;
+}
+
+
+
+ .slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
+}

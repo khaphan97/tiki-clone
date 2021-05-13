@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <style>
+         @font-face {
+            font-family: "cuahangdodung-bold";
+            src: url("./public/font_family/Roboto-Bold.ttf");
+            font-weight: normal;
+            font-style: normal;
+            font-display: fallback;
+         }
+
+         @font-face {
+            font-family: "cuahangdodung-regular";
+            src: url("./public/font_family/Roboto-Regular.ttf");
+            font-weight: normal;
+            font-style: normal;
+            font-display: fallback;
+         }
+
+         @font-face {
+            font-family: "cuahangdodung-Light";
+            src: url("./public/font_family/Roboto-Light.ttf");
+            font-weight: normal;
+            font-style: normal;
+            font-display: fallback;
+         }
+      </style>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="./public/css/helper.css" />
+      <link rel="stylesheet" href="./public/css/global.css" />
+      <link rel="stylesheet" href="./public/css/tiki_home.css" />
+      <link rel="stylesheet" href="./public/css/slick.min.css" />
+      <link rel="stylesheet" href="./public/css/slick-theme.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+         crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="public/css/slick_config.css" />
+   </head>
+
+   <body>
+      <!-- User Box Modal-->
+      <div class="user_modal">
+         <!-- Login Box -->
+         <div class="user_login_box user_modal_box">
+            <span class="close_btn"></span>
+            <div class="user_box_left">
+               <h2 class="heading">Đăng Nhập</h2>
+               <p>Đăng nhập để theo dõi đơn hàng, lưu danh sách sản phẩm yêu thích, nhận nhiều ưu đãi hấp dẫn.</p>
+               <img src="https://frontend.tikicdn.com/_desktop-next/static/img/graphic-map.png" />
+            </div>
+            <div class="user_box_right">
+               <div class="user_box_tab d-flex">
+                  <div class="user_box_tab_item active" data-modal="user_login_box">Đăng nhập</div>
+                  <div class="user_box_tab_item" data-modal="user_register_box">Tạo tài khoản</div>
+               </div>
+               <div class="user_box_form">
+                  <form action="">
+                     <div class="form-group">
+                        <label for="">Email / SĐT</label>
+                        <input type="text" class="form-control" name="user_email" id="user_email" aria-describedby="helpId" placeholder="Nhập email hoặc số điện thoại" />
+                     </div>
+                     <div class="form-group">
+                        <label for="">Mật khẩu</label>
+                        <input type="password" class="form-control" name="user_password" id="user_password" aria-describedby="helpId" placeholder="Mật khẩu từ 6 đến 32 ký tự" />
+                     </div>
+                     <div class="user_box_btn">
+                        <p class="user_forgot_password">Quên mật khẩu? Nhấn vào <a href="">đây </a></p>
+                        <button class="user_dropdown_btn main_btn">Đăng nhập</button>
+                        <button class="user_dropdown_btn facebook_btn">Đăng nhập bằng Facebook</button>
+                        <button class="user_dropdown_btn google_btn">Đăng nhập bằng Google</button>
+                        <button class="user_dropdown_btn zalo_btn">Đăng nhập bằng Zalo</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- Login Box -->
+         <div class="user_register_box user_modal_box">
+            <span class="close_btn"></span>
+            <div class="user_box_left">
+               <h2 class="heading">Tạo tài khoản</h2>
+               <p>Tạo tài khoản để theo dõi đơn hàng, lưu danh sách sản phẩm yêu thích, nhận nhiều ưu đãi hấp dẫn.</p>
+               <img src="https://frontend.tikicdn.com/_desktop-next/static/img/graphic-map.png" />
+            </div>
+            <div class="user_box_right">
+               <div class="user_box_tab d-flex">
+                  <div class="user_box_tab_item" data-modal="user_login_box">Đăng nhập</div>
+                  <div class="user_box_tab_item active" data-modal="user_register_box">Tạo tài khoản</div>
+               </div>
+               <div class="user_box_form">
+                  <form action="">
+                     <div class="form-group">
+                        <label for="">Họ và tên</label>
+                        <input type="text" class="form-control" name="user_fullname" id="user_fullname" aria-describedby="helpId" placeholder="Nhập họ và tên" />
+                     </div>
+                     <div class="form-group">
+                        <label for="">SĐT</label>
+                        <input type="text" class="form-control" name="user_phone" id="user_phone" aria-describedby="helpId" placeholder="Nhập số điện thoại" />
+                     </div>
+                     <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" name="user_email" id="user_email" aria-describedby="helpId" placeholder="Nhập địa chỉ email" />
+                     </div>
+                     <div class="form-group">
+                        <label for="">Mật khẩu</label>
+                        <input type="password" class="form-control" name="user_password" id="user_password" aria-describedby="helpId" placeholder="Mật khẩu từ 6 đến 32 ký tự" />
+                     </div>
+                     <div class="form-group">
+                        <label for="">Giới tính</label>
+                        <input type="radio" value="male" name="user_gender" id="male" />
+                        <label for="male">Nam</label>
+                        <input type="radio" value="male" name="user_gender" id="female" />
+                        <label for="female">Nữ</label>
+                     </div>
+                     <div class="form-group">
+                        <label for="">Ngày sinh</label>
+                        <select name="date" id="user_date">
+                           <option value="0">Ngày</option>
+                        </select>
+                        <select name="month" id="user_month">
+                           <option value="0">Tháng</option>
+                        </select>
+                        <select name="year" id="user_year">
+                           <option value="0">Năm</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <input type="checkbox" name="" id="" />
+                        <p class="user_get_news">Nhận các thông tin và chương trình khuyến mãi của Tiki qua email.</p>
+                     </div>
+                     <div class="user_box_btn">
+                        <button class="user_dropdown_btn main_btn">Tạo tài khoản</button>
+                     </div>
+                     <p class="user_auth">Khi bạn nhấn Đăng ký, bạn đã đồng ý thực hiện mọi giao dịch mua bán theo <a href="">điều kiện sử dụng và chính sách của Tiki.</a></p>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Header -->
+      <header id="header_pc"> 
+         <div class="container">
+            <div class="middle_wrap">
+               <div class="middle_wrap__left">
+                  <div class="logo_menu position-relative">
+                     <div class="header_logo">
+                        <a href=""><img src="public/images/demo/tiki_logo.png" alt="" /></a>
+                     </div>
+                     <div class="header_menu">
+                        <div class="wrap d-flex justify-content-between">
+                           <img src="public/images/icons/barrs.png" alt="" />
+                           <div class="menu_text">
+                              <span>Danh mục</span>
+                              <span class="text_icon">Sản phẩm</span>
+                           </div>
+                        </div>
+                        <nav class="nav_container position-absolute">
+                           <ul class="main_nav">
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                                 <div class="sub_nav_container">
+                                    <ul class="d-flex flex-wrap">
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                                 <div class="sub_nav_container">
+                                    <ul class="d-flex flex-wrap">
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                       <li class="sub_nav__col">
+                                          <a href="" class="sub_nav__item sub_nav__title">Xu hướng</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                          <a href="" class="sub_nav__item">Samsung Galaxy S20 Plus</a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                              <li class="menu_item">
+                                 <a href="" class="main_nav__item">
+                                    <img src="public/psd/demo_nav_icon.png" alt="" class="nav_item__icon" />
+                                    <span class="nav_item__name">Điện thoại - Máy tính bảng</span>
+                                 </a>
+                              </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+                  <div class="form-search d-flex position-relative">
+                     <form action="" method="post" class="d-flex">
+                        <input type="text" name="" id="" class="form-control" placeholder="Tìm kiếm sản phẩm, danh mục , thương hiệu mong muốn..." aria-describedby="helpId" />
+                        <div class="search__btn d-flex">
+                           <i class="fas fa-search"></i>
+                           <span>Tìm kiếm</span>
+                        </div>
+                     </form>
+                     <div class="search_box">
+                        <a href="" class="item_promo d-flex">
+                           <img src="https://salt.tikicdn.com/ts/upload/4b/4e/8a/ffc1ed4433a965e6330f85dc31dd3069.png" alt="" class="item_promo__icon" />
+                           <span class="item_promo__text">Johnson & Johnson mua 1 được 3</span>
+                           <img src="https://salt.tikicdn.com/ts/upload/bf/0b/c4/a963d963626c0aa2634c08f300634efe.png" alt="" class="item_promo__icon" />
+                        </a>
+                        <div class="search_suggestion">
+                           <a href="" class="search_suggestion__item d-flex">
+                              <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" class="item_promo__icon" />
+                              <span>Tai nghe bluetooth</span>
+                           </a>
+                           <a href="" class="search_suggestion__item d-flex">
+                              <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" class="item_promo__icon" />
+                              <span>bitis hunter</span>
+                           </a>
+                           <a href="" class="search_suggestion__item d-flex">
+                              <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" class="item_promo__icon" />
+                              <span>tai nghe</span>
+                           </a>
+                           <div class="search_suggestion__more">
+                              <a href="">Xem thêm</a>
+                           </div>
+                        </div>
+                        <div class="search_bottom">
+                           <div class="hot_keywords">
+                              <div class="hot_keywords__heading d-flex align-items-center">
+                                 <img src="https://salt.tikicdn.com/ts/upload/4f/03/a0/2455cd7c0f3aef0c4fd58aa7ff93545a.png" alt="" class="trending" />
+                                 <span>Tìm kiếm phổ biến</span>
+                              </div>
+                              <div class="hot_keywords__body d-flex flex-wrap mt-3">
+                                 <a href="" class="hot_keywords__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/cache/280x280/ts/product/e5/7f/49/ddddf941490de66864d210d7f83998f6.jpg" alt="thumb" class="thumb" />
+                                    <span class="title">eucerin</span>
+                                 </a>
+                                 <a href="" class="hot_keywords__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/cache/280x280/ts/product/e5/7f/49/ddddf941490de66864d210d7f83998f6.jpg" alt="thumb" class="thumb" />
+                                    <span class="title">eucerin</span>
+                                 </a>
+                                 <a href="" class="hot_keywords__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/cache/280x280/ts/product/e5/7f/49/ddddf941490de66864d210d7f83998f6.jpg" alt="thumb" class="thumb" />
+                                    <span class="title">eucerin</span>
+                                 </a>
+                                 <a href="" class="hot_keywords__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/cache/280x280/ts/product/e5/7f/49/ddddf941490de66864d210d7f83998f6.jpg" alt="thumb" class="thumb" />
+                                    <span class="title">eucerin</span>
+                                 </a>
+                                 <a href="" class="hot_keywords__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/cache/280x280/ts/product/e5/7f/49/ddddf941490de66864d210d7f83998f6.jpg" alt="thumb" class="thumb" />
+                                    <span class="title">eucerin</span>
+                                 </a>
+                                 <a href="" class="hot_keywords__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/cache/280x280/ts/product/e5/7f/49/ddddf941490de66864d210d7f83998f6.jpg" alt="thumb" class="thumb" />
+                                    <span class="title">eucerin</span>
+                                 </a>
+                              </div>
+                           </div>
+                           <div class="hot_categories">
+                              <div class="hot_categories__heading d-flex align-items-center">
+                                 <span>Danh mục nổi bật</span>
+                              </div>
+                              <div class="hot_categories__body mt-3 d-flex align-items-center flex-wrap">
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                                 <a href="" class="hot_categories__item d-flex align-items-center">
+                                    <img src="https://salt.tikicdn.com/ts/category/70/52/b1/31587960ac1eb915a86a5a8202da583a.png" alt="" class="thumb" />
+                                    <span class="title">Điện tử - Điện lạnh</span>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="middle_wrap__right d-flex">
+                  <div class="header_user position-relative">
+                     <img src="public/images/demo/user_tiki.png" alt="" />
+                     <span class="user_item">
+                        <span>Đăng nhập/Đăng ký</span>
+                        <span class="user_label"> Tài khoản <i class="fas fa-caret-down"></i> </span>
+                     </span>
+                     <div class="user_dropdown">
+                        <buntton class="user_dropdown_btn main_btn btn_modal" data-modal=".user_login_box">Đăng nhập</buntton>
+                        <buntton class="user_dropdown_btn main_btn btn_modal" data-modal=".user_register_box">Tạo tài khoản</buntton>
+                        <buntton class="user_dropdown_btn facebook_btn">Đăng nhập bằng Facebook</buntton>
+                        <buntton class="user_dropdown_btn google_btn">Đăng nhập bằng Google</buntton>
+                        <buntton class="user_dropdown_btn zalo_btn">Đăng nhập bằng Zalo</buntton>
+                     </div>
+                  </div>
+                  <div class="header_user_shortcut_cart d-flex">
+                     <div class="cart_wrapper w-50">
+                        <img src="public/images/demo/tiki_cart.png" alt="" />
+                     </div>
+                     <span class="cart_text">Giỏ hàng</span>
+                  </div>
+               </div>
+            </div>
+            <div class="header__bottom">
+               <div class="header__keywords">
+                  <a href="">Tủ lạnh</a>
+                  <a href="">Tủ lạnh</a>
+                  <a href="">Tủ lạnh</a>
+                  <a href="">Tủ lạnh</a>
+                  <a href="">Tủ lạnh</a>
+                  <a href="">Tủ lạnh</a>
+               </div>
+            </div>
+         </div>
+      </header>
+
+      <header id="header_mobile">
+         <div id="header_top">
+            <a href="" class="header_nav">
+               <img class="w-100" src="public/images/icons/barrs.png" alt="" />
+            </a>
+            <a href="" class="header_logo"><img class="" src="public/images/demo/tiki_logo.png" alt="" /></a>
+            <a href="" class="header_cart"><img class="w-100" src="public/images/demo/tiki_cart.png" alt="" /></a>
+            <div class="header_search">
+               <form action="" class="d-flex">
+                  <button class="search_btn"><img class="w-100" src="public/images/icons/search-icon-mb.png" alt="" /></button>
+                  <input type="text" placeholder="Bạn muốn tìm gì hôm nay" />
+               </form>
+            </div>
+         </div>
+         <div class="home_banner d-flex justify-content-center">
+            <div class="home_banner__left">
+               <div class="banner_left__slider">
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/af/69/cf/9da63bbc6e00e69284ffcc98a1d1b54a.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/75/a0/9c/a18aea36536f50cb7b030f6d50b50b6b.png.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/f1/71/5a/acd4478672e3c4ee661d328037b3ec8e.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/f1/71/5a/acd4478672e3c4ee661d328037b3ec8e.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/f1/71/5a/acd4478672e3c4ee661d328037b3ec8e.jpg" alt="" /></a>
+               </div>
+            </div>
+            <!-- <div class="home_banner__right">
+               <a href=""><img src="https://salt.tikicdn.com/cache/w408/ts/banner/aa/3b/b3/403c766e847f8a4509ad21f6cadcb6bb.jpg" alt="" /></a>
+            </div> -->
+         </div>
+      </header>
+      <main>
+         <!-- Main Banner -->
+         <div class="home_banner container d-flex justify-content-between my-4" id="home_banner_pc">
+            <div class="home_banner__left position-relative">
+               <div class="banner_left__slider">
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/af/69/cf/9da63bbc6e00e69284ffcc98a1d1b54a.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/75/a0/9c/a18aea36536f50cb7b030f6d50b50b6b.png.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/f1/71/5a/acd4478672e3c4ee661d328037b3ec8e.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/f1/71/5a/acd4478672e3c4ee661d328037b3ec8e.jpg" alt="" /></a>
+                  <a href=""><img src="https://salt.tikicdn.com/cache/w824/ts/banner/f1/71/5a/acd4478672e3c4ee661d328037b3ec8e.jpg" alt="" /></a>
+               </div>
+               <ul class="navigation">
+                  <li class="next-arrow"><span>&#8250;</span></li>
+                  <li class="prev-arrow"><span>&#8249;</span></li>
+               </ul>
+            </div>
+            <div class="home_banner__right">
+               <a href=""><img src="https://salt.tikicdn.com/cache/w408/ts/banner/aa/3b/b3/403c766e847f8a4509ad21f6cadcb6bb.jpg" alt="" /></a>
+            </div>
+         </div>
+
+         <!-- Main Content -->
+         <div class="container">
+            <!-- Flashsale -->
+            <div class="home_deal" id="draggable">
+               <div class="home_deal__heading d-flex align-items-center">
+                  <div>
+                     <img src="https://frontend.tikicdn.com/_desktop-next/static/img/giasoc.svg" alt="flash deal" />
+                     <img src="https://frontend.tikicdn.com/_desktop-next/static/img/flash.gif" alt="flash deal" />
+                     <img src="https://frontend.tikicdn.com/_desktop-next/static/img/homnay.svg" alt="flash deal" />
+                  </div>
+                  <div class="timer"></div>
+               </div>
+               <div class="home_deal__body position-relative">
+                  <div class="home_deal__wrap d-flex flex-wrap slider">
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                     <div class="home_deal__item d-flex">
+                        <div class="deal__img position-relative">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/b4/77/36/2aac12bffd3c6671d6d4717c79dd1103.jpg" alt="" class="deal__thumb" />
+                           <span class="deal__discount">-25%</span>
+                        </div>
+                        <span class="deal__price">225.000đ</span>
+                        <div class="deal__qty my-2">
+                           <div class="deal__progress" style="width: 20%"></div>
+                           <span>Đã bán 4</span>
+                        </div>
+                     </div>
+                  </div>
+                  <ul class="navigation">
+                     <li class="home_deal next-arrow"><span>&#8250;</span></li>
+                     <li class="home_deal prev-arrow"><span>&#8249;</span></li>
+                  </ul>
+               </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="home_quicklinks_container white-bg d-flex my-4">
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png" alt="" class="thumb" />
+                  <span class="title">Mã giảm giá</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/b2/e9/22/2b3ef51042c789f5c6d1985217cee43b.png" alt="" class="thumb" />
+                  <span class="title">Bí kíp săn sale</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png" alt="" class="thumb" />
+                  <span class="title">Mã giảm giá</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/b2/e9/22/2b3ef51042c789f5c6d1985217cee43b.png" alt="" class="thumb" />
+                  <span class="title">Bí kíp săn sale</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png" alt="" class="thumb" />
+                  <span class="title">Mã giảm giá</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/b2/e9/22/2b3ef51042c789f5c6d1985217cee43b.png" alt="" class="thumb" />
+                  <span class="title">Bí kíp săn sale</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png" alt="" class="thumb" />
+                  <span class="title">Mã giảm giá</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/b2/e9/22/2b3ef51042c789f5c6d1985217cee43b.png" alt="" class="thumb" />
+                  <span class="title">Bí kíp săn sale </span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png" alt="" class="thumb" />
+                  <span class="title">Mã giảm giá</span>
+               </a>
+               <a href="" class="quicklink_item d-flex">
+                  <img src="https://salt.tikicdn.com/ts/upload/b2/e9/22/2b3ef51042c789f5c6d1985217cee43b.png" alt="" class="thumb" />
+                  <span class="title">Bí kíp săn sale</span>
+               </a>
+            </div>
+
+            <!-- Banner Primary -->
+            <div class="home_banner_primary d-flex flex-wrap">
+               <a href="" class="banner_primary__item">
+                  <img class="w-100" src="https://salt.tikicdn.com/cache/w295/ts/banner/42/86/e5/5ed6e31618f354b63e9d385e9896d07e.png.jpg" alt="" />
+               </a>
+               <a href="" class="banner_primary__item">
+                  <img class="w-100" src="https://salt.tikicdn.com/cache/w295/ts/banner/00/62/26/c68504df182b3112048b8077960c0928.png.jpg" alt="" />
+               </a>
+               <a href="" class="banner_primary__item">
+                  <img class="w-100" src="https://salt.tikicdn.com/cache/w295/ts/banner/ab/dc/62/8aab3fc08e6a48abc3aef89237136c33.png.jpg" alt="" />
+               </a>
+               <a href="" class="banner_primary__item">
+                  <img class="w-100" src="https://salt.tikicdn.com/cache/w295/ts/banner/f0/ed/7c/9787934509b4116472e74e8fc857aaf9.png.jpg" alt="" />
+               </a>
+            </div>
+
+            <!-- Home top Category -->
+            <div class="home_top_category white-bg my-4">
+               <div class="heading">Danh mục nổi bật</div>
+               <div class="body d-flex flex-wrap" id="home_top_category_slider">
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/7a/01/db/9281ea81cb586233c5f343cf00321b82.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Chăm sóc thú cưng</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/50/80/98/f169ba19aa95901ed1b7f8f1c3a15492.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Nội thất</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/07/2a/9f/f827733c48227f3779e6c829a4177bf4.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Đồ dùng nhà bếp</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/7a/01/db/9281ea81cb586233c5f343cf00321b82.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Chăm sóc thú cưng</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/50/80/98/f169ba19aa95901ed1b7f8f1c3a15492.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Nội thất</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/07/2a/9f/f827733c48227f3779e6c829a4177bf4.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Đồ dùng nhà bếp</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/7a/01/db/9281ea81cb586233c5f343cf00321b82.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Chăm sóc thú cưng</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/50/80/98/f169ba19aa95901ed1b7f8f1c3a15492.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Nội thất</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/07/2a/9f/f827733c48227f3779e6c829a4177bf4.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Đồ dùng nhà bếp</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/7a/01/db/9281ea81cb586233c5f343cf00321b82.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Chăm sóc thú cưng</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/50/80/98/f169ba19aa95901ed1b7f8f1c3a15492.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Nội thất</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/07/2a/9f/f827733c48227f3779e6c829a4177bf4.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Đồ dùng nhà bếp</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/7a/01/db/9281ea81cb586233c5f343cf00321b82.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Chăm sóc thú cưng</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/50/80/98/f169ba19aa95901ed1b7f8f1c3a15492.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Nội thất</span>
+                  </a>
+                  <a href="" class="top_category__item d-flex">
+                     <div class="thumb">
+                        <img src="https://salt.tikicdn.com/cache/280x280/ts/product/07/2a/9f/f827733c48227f3779e6c829a4177bf4.jpg" alt="" class="" />
+                     </div>
+                     <span class="title">Đồ dùng nhà bếp</span>
+                  </a>
+               </div>
+            </div>
+
+            <!-- Top Search -->
+            <div class="home_top_search white-bg">
+               <div class="heading d-flex justify-content-between">
+                  <div class="heading__title d-flex">
+                     <img src="https://salt.tikicdn.com/ts/upload/c5/0e/02/23066556738e7f5df8b8fde5d0d1dfd6.png" />
+                     Tìm kiếm nổi bật
+                  </div>
+                  <div class="heading__more d-flex">
+                     <img class="" src="https://salt.tikicdn.com/ts/upload/b2/14/5f/811ab1cf876d0e9d9a3de7c886ca7c59.png" />
+                     XEM THÊM
+                  </div>
+               </div>
+               <div class="body d-flex flex-wrap justify-content-around">
+                  <a href="" data-view-id="home_top_search_item" class="home_top_search__item">
+                     <div class="picture-group d-flex p-2">
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8b/13/96/248aebdc30e1e432c7ca7bda19af119e.png" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3f/29/8f/3b36d305a519b508ba52dbfd373add37.jpg" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/39/9a/ba/de2756a19600d7f301146c959c56d2ee.jpg" alt="title" class="item_img" />
+                        </div>
+                     </div>
+                     <div class="content">
+                        <span class="title">máy giặt mini</span>
+                        <span class="sub-title">1k+ sản phẩm</span>
+                     </div>
+                  </a>
+                  <a href="" data-view-id="home_top_search_item" class="home_top_search__item">
+                     <div class="picture-group d-flex p-2">
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8b/13/96/248aebdc30e1e432c7ca7bda19af119e.png" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3f/29/8f/3b36d305a519b508ba52dbfd373add37.jpg" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/39/9a/ba/de2756a19600d7f301146c959c56d2ee.jpg" alt="title" class="item_img" />
+                        </div>
+                     </div>
+                     <div class="content">
+                        <span class="title">máy giặt mini</span>
+                        <span class="sub-title">1k+ sản phẩm</span>
+                     </div>
+                  </a>
+                  <a href="" data-view-id="home_top_search_item" class="home_top_search__item">
+                     <div class="picture-group d-flex p-2">
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8b/13/96/248aebdc30e1e432c7ca7bda19af119e.png" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3f/29/8f/3b36d305a519b508ba52dbfd373add37.jpg" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/39/9a/ba/de2756a19600d7f301146c959c56d2ee.jpg" alt="title" class="item_img" />
+                        </div>
+                     </div>
+                     <div class="content">
+                        <span class="title">máy giặt mini</span>
+                        <span class="sub-title">1k+ sản phẩm</span>
+                     </div>
+                  </a>
+                  <a href="" data-view-id="home_top_search_item" class="home_top_search__item">
+                     <div class="picture-group d-flex p-2">
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8b/13/96/248aebdc30e1e432c7ca7bda19af119e.png" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3f/29/8f/3b36d305a519b508ba52dbfd373add37.jpg" alt="title" class="item_img" />
+                        </div>
+                        <div class="item_img_container">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/39/9a/ba/de2756a19600d7f301146c959c56d2ee.jpg" alt="title" class="item_img" />
+                        </div>
+                     </div>
+                     <div class="content">
+                        <span class="title">máy giặt mini</span>
+                        <span class="sub-title">1k+ sản phẩm</span>
+                     </div>
+                  </a>
+               </div>
+            </div>
+
+            <!-- banner middle -->
+            <div class="home_banner_middle my-4 d-flex justify-content-between flex-wrap">
+               <a data-view-id="home_banner_middle_item" class="home_banner_middle_item" data-view-index="0" href="" title="">
+                  <img alt="" src="https://salt.tikicdn.com/cache/w394/ts/banner/88/85/4b/2604c7921578dc89cf998361d64a1e9e.png.jpg" />
+               </a>
+               <a data-view-id="home_banner_middle_item" class="home_banner_middle_item" data-view-index="0" href="" title="">
+                  <img alt="" src="https://salt.tikicdn.com/cache/w394/ts/banner/00/6e/85/c8b19d5f496e857e699e7d14e5c1ea21.png.jpg" />
+               </a>
+               <a data-view-id="home_banner_middle_item" class="home_banner_middle_item" data-view-index="0" href="" title="">
+                  <img alt="" src="https://salt.tikicdn.com/cache/w394/ts/banner/f1/3b/89/612883102433ff5f78ce746f3fc58ce3.png.jpg" />
+               </a>
+            </div>
+
+            <!--  Products Section -->
+            <div class="home_products_list white-bg pb-3">
+               <div class="header d-flex">
+                  <div class="tab active p-4">Gợi ý hôm nay</div>
+               </div>
+               <div class="home_products_list_wrap">
+                  <div class="home_products_list_content">
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/26/bd/9a/2f54438b2de1de19155bbc04c9361d31.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3b/cc/1d/5a1f8cede955503e1a6ddd4d1bac2f42.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/eb/93/2b/d1ed5d72147a3483575a83549406b226.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/db/fe/f1/9d20bd14ceaa28978b63b6ea489840f8.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8d/ba/46/27b55009d057bc5895dab32287bb837f.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/26/bd/9a/2f54438b2de1de19155bbc04c9361d31.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3b/cc/1d/5a1f8cede955503e1a6ddd4d1bac2f42.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/eb/93/2b/d1ed5d72147a3483575a83549406b226.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/db/fe/f1/9d20bd14ceaa28978b63b6ea489840f8.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8d/ba/46/27b55009d057bc5895dab32287bb837f.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/26/bd/9a/2f54438b2de1de19155bbc04c9361d31.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3b/cc/1d/5a1f8cede955503e1a6ddd4d1bac2f42.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/eb/93/2b/d1ed5d72147a3483575a83549406b226.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/db/fe/f1/9d20bd14ceaa28978b63b6ea489840f8.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8d/ba/46/27b55009d057bc5895dab32287bb837f.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/26/bd/9a/2f54438b2de1de19155bbc04c9361d31.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/3b/cc/1d/5a1f8cede955503e1a6ddd4d1bac2f42.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/eb/93/2b/d1ed5d72147a3483575a83549406b226.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/db/fe/f1/9d20bd14ceaa28978b63b6ea489840f8.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                     <a href="" class="home_product_item">
+                        <div class="thumb">
+                           <img src="https://salt.tikicdn.com/cache/280x280/ts/product/8d/ba/46/27b55009d057bc5895dab32287bb837f.jpg" alt="" />
+                        </div>
+                        <div class="info">
+                           <span class="name">Máy sấy Electrolux 7 Kg EDV705HQWA</span>
+                           <div class="rating my-2 d-flex">
+                              <div class="rating_star">
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                                 <span class="fa fa-star checked"></span>
+                              </div>
+                              <div class="rating_total ml-2">(182)</div>
+                           </div>
+                           <div class="price">
+                              <span>6.969.000 ₫</span>
+                              <span class="discount ml-2">-30%</span>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="home_products_list_more w-100">
+                     <a href="">Xem thêm</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="">
+         <div class="footer_news_letter my-5">
+            <div class="container d-flex align-items-center">
+               <div class="news_letter-icon">
+                  <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/newsletter.png" width="163" alt="" />
+               </div>
+               <div class="news_letter-description">
+                  <h3>Đăng ký nhận bản tin Tiki</h3>
+                  <h5>Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn</h5>
+               </div>
+               <div class="news_letter-form d-flex">
+                  <div class="mr-2">
+                     <input class="w-100" type="email" placeholder="Địa chỉ email của bạn" value="" />
+                  </div>
+                  <button>Đăng ký</button>
+               </div>
+            </div>
+         </div>
+         <div class="footer_information white-bg">
+            <div class="container py-5 d-flex justify-content-between">
+               <div class="block py-4">
+                  <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                  <p class="hotline">
+                     Hotline chăm sóc khách hàng:
+                     <a class="hotline" href="tel:1900-6035">1900-6035</a>
+                     <span class="small-text">(1000đ/phút , 8-21h kể cả T7, CN)</span>
+                  </p>
+                  <a href="" class="small-text">Các câu hỏi thường gặp</a>
+                  <a href="" class="small-text">Gửi yêu cầu hỗ trợ</a>
+                  <a href="" class="small-text">Hướng dẫn đặt hàng</a>
+                  <a href="" class="small-text">Phương thức vận chuyển</a>
+                  <a href="" class="small-text">Chính sách đổi trả</a>
+                  <a href="" class="small-text">Hướng dẫn trả góp</a>
+                  <a href="" class="small-text">Chính sách hàng nhập khẩu</a>
+                  <a href="" class="small-text"></a>
+                  <a href="" class="small-text">Hỗ trợ khách hàng: hotro@tiki.vn</a>
+                  <a href="" class="small-text">Báo lỗi bảo mật: baomat@tiki.vn</a>
+               </div>
+               <div class="block py-4">
+                  <h4>Về Tiki</h4>
+                  <a href="" class="small-text">Giới thiệu Tiki</a>
+                  <a href="" class="small-text">Tuyển dụng</a>
+                  <a href="" class="small-text">Chính sách bảo mật</a>
+                  <a href="" class="small-text">Giới thiệu Tiki xu</a>
+                  <a href="" class="small-text">Chính sách đổi trả</a>
+                  <a href="" class="small-text">Giới thiệu doanh nghiệp</a>
+               </div>
+               <div class="block py-4">
+                  <h4>Hợp tác và liên kết</h4>
+                  <a href="" class="small-text">Quy chế hoạt động sàn GDTMDT</a>
+                  <a href="" class="small-text">Bán hàng cùng Tiki</a>
+               </div>
+               <div class="block py-4">
+                  <h4>Phương thức thanh toán</h4>
+                  <p class="d-flex flex-wrap">
+                     <img class="icon" src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/visa.svg" width="54" alt="" /><img
+                        class="icon"
+                        src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/mastercard.svg"
+                        alt=""
+                     /><img class="icon" src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/jcb.svg" alt="" /><img
+                        class="icon"
+                        src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/cash.svg"
+                        alt=""
+                     /><img class="icon" src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/internet-banking.svg" alt="" /><img
+                        class="icon"
+                        src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/installment.svg"
+                        width="54"
+                        alt=""
+                     />
+                  </p>
+               </div>
+               <div class="block py-4">
+                  <h4>Kết nối với chúng tôi</h4>
+                  <p class="d-flex">
+                     <a rel="noreferrer" href="https://www.facebook.com/tiki.vn/" class="icon" target="_blank" title="Facebook"
+                        ><img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/fb.svg" width="32" alt="" /></a
+                     ><a rel="noreferrer" href="https://www.youtube.com/user/TikiVBlog" class="icon" target="_blank" title="Youtube"
+                        ><img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/youtube.svg" width="32" alt=""
+                     /></a>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </body>
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="public/js/slick.min.js"></script>
+   <script src="public/js/home_sliders.js"></script>
+   <script src="public/js/user_modal.js"></script>
+   <script src="public/js/header_mobile.js"></script>
+</html>

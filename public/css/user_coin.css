@@ -1,0 +1,78 @@
+.tikixu {
+   background-color: #fff;
+   width: 100%;
+   padding: 20px;
+   text-align: center;
+}
+.account-tikixu {
+   font-size: 13px;
+}
+.account-tikixu img {
+   vertical-align: middle;
+   margin-right: 5px;
+   margin-bottom: 5px;
+}
+.account-tikixu .big {
+   font-size: 30px;
+   margin-left: 4px;
+}
+
+.account_coin {
+   color: #41d67e;
+   font-weight: bold;
+}
+.user_box_form {
+   background-color: #fff;
+}
+#form_convert_tikixu {
+   width: 70%;
+}
+#form_convert_tikixu .form-group label {
+   width: 15%;
+   font-weight: 400;
+   line-height: 35px;
+}
+#form_convert_tikixu .form-group .input-wrap {
+   display: inline-block;
+   width: 74%;
+}
+
+#form_convert_tikixu .form-group input[type="text"] {
+   width: 100%;
+   height: 40px;
+}
+#btn-convert-gift-code {
+   width: 100%;
+   height: 40px;
+   border-radius: 3px;
+   background-color: #fdd835;
+   color: #4a4a4a;
+   line-height: 40px;
+   font-weight: bold;
+   text-align: center;
+   display: block;
+}
+
+@media (max-width: 1025px) {
+   /* .account_cart_ordered{
+       display: none;
+   } */
+   /* .account_cart_ordered.mobile{
+       display: none;
+   } */
+   #form_convert_tikixu {
+      width: 100%;
+   }
+   #form_convert_tikixu .form-group label {
+      width: 25%;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   #form_convert_tikixu {
+      width: 100%;
+   }
+   #form_convert_tikixu .form-group label {
+      width: 25%;
+   }
+}

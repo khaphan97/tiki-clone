@@ -1,0 +1,54 @@
+.account_notification {
+   background-color: #fff;
+}
+
+.account_notification_tabs {
+   position: relative;
+   list-style: none;
+   padding: 0px;
+   margin: 0px;
+   display: flex;
+   border-bottom: 1px solid rgb(248, 248, 248);
+}
+
+.account_notification_tab_item{
+    padding: 8px 15px 5px;
+    margin: 0px 20px;
+    font-size: 28px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    color: rgb(102, 102, 102);
+    position: relative;
+    z-index: 1;
+}
+
+.account_notification_tab_item.active{
+    border-bottom: 3px solid rgb(27, 168, 255);
+
+}
+.account_notification_empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px;
+}
+.account_notification_empty .message{
+    margin: 20px 0px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.account_notification_empty .back{
+    width: 190px;
+    border-radius: 4px;
+    color: rgb(74, 74, 74);
+    font-size: 14px;
+    background-color: rgb(253, 216, 53);
+    display: block;
+    padding: 10px 30px;
+    margin: auto;
+    text-align: center;
+}
+.account_notification_empty .back:hover{
+    background-color: rgba(253, 216, 53, 0.74);
+}
